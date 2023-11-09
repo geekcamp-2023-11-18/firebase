@@ -47,8 +47,9 @@ function firebaseStorage() {
   const fileUpload = async() => {
     const inputRef =  document.getElementById('Uploadfile');
     const file = inputRef.files[0];
-    const fileRef = ref(storage, "test/" + [p0]);
+    const fileRef = ref(storage, "test/" + file.name);
     uploadBytes(fileRef, file);
+    console.log("upload");
   }
 
   // ファイルダウンロード
